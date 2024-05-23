@@ -41,7 +41,7 @@ app.get("/lala", async (req: Request, res: Response) => {
     res.status(500).json({ status: false, message: "Internal server error" });
   }
 });
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
