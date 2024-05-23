@@ -7,7 +7,8 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "serve": "node dist/index.js",
-    "nodemon": "nodemon"
+    "nodemon": "nodemon",
+    "vercel-build": "echo hello"
   },
   "author": "",
   "license": "ISC",
