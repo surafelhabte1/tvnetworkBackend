@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://default:3pVjo0zRgGPQ@ep-quiet-tree-a4fw0lfa-pooler.us-east-1.aws.neon.tech:5432/verceldb?schema=public"
+  url      = "postgresql://postgres:Abcd@5304@localhost:5432/postgres?schema=public"
 }
 
 model categorie {
