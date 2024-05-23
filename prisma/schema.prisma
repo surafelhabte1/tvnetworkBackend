@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:Abcd@5304@localhost:5432/postgres?schema=public"
+}
+
+model categorie {
+  id      Int       @id(map: "categorie_pk") @default(autoincrement())
+  name    String    @db.VarChar
+  program program[]
+}
+
+model channel {
+  id        Int      @id(map: "channel_pk") @default(autoincrement())
+  name      String   @db.VarChar
+  createdat DateTime @default(now()) @db.Date
+  status    Boolean  @default(false)
+  program   program?
+}
+
+model favorite {
+  id        Int     @id(map: "favorite_pk") @default(autoincrement())
+  userid    Int
+  programid Int
+  program   program @relation(fields: [programid], references: [id], onDelete: Cascade, map: "favorite_program_fk")
+  user      user    @relation(fields: [userid], references: [id], onDelete: Cascade, map: "favorite_user_fk")
+}
+
+model program {
+  id           Int          @id(map: "program_pk") @default(autoincrement())
+  title        String       @db.VarChar
+  duration     String       @db.VarChar
+  description  String       @db.VarChar
+  channelid    Int
+  typeid       Int
+  categoryid   Int
+  videourl     String       @db.VarChar
+  thumbnailurl String       @db.VarChar
+  createdat    DateTime     @default(now()) @db.Date
+  status       Boolean      @default(false)
+  favorite     favorite[]
+  categorie    categorie    @relation(fields: [categoryid], references: [id], onDelete: Cascade, map: "program_categorie_fk")
+  channel      channel      @relation(fields: [id], references: [id], onDelete: Cascade, map: "program_channel_fk")
+  type         type         @relation(fields: [typeid], references: [id], onDelete: Cascade, map: "program_type_fk")
+  watchlater   watchlater[]
+}
+
+model type {
+  id      Int       @id(map: "type_pk") @default(autoincrement())
+  name    String    @db.VarChar
+  program program[]
+}
+
+model user {
+  id         Int          @id(map: "user_pk") @default(autoincrement())
+  fullname   String       @db.VarChar
+  email      String       @db.VarChar
+  createdat  DateTime     @default(now()) @db.Date
+  password   String
+  favorite   favorite[]
+  watchlater watchlater[]
+}
+
+model watchlater {
+  id        Int     @id(map: "watchlater_pk") @default(autoincrement())
+  userid    Int
+  programid Int
+  program   program @relation(fields: [programid], references: [id], onDelete: Cascade, map: "watchlater_program_fk")
+  user      user    @relation(fields: [userid], references: [id], onDelete: Cascade, map: "watchlater_user_fk")
+}
