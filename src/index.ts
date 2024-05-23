@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 
 import { crudRoute } from "./controllers/crud";
 import { utilRoute } from "./controllers/util";
-import cors from 'cors';
+import cors from "cors";
 
 export const routes = express.Router();
 dotenv.config();
@@ -38,3 +38,5 @@ const port = process.env.PORT || 3002;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
+
+export default app;
