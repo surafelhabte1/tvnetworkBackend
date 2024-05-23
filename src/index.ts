@@ -33,6 +33,14 @@ main()
   });
 
 app.use("/", routes);
+
+app.get("/lala", async (req: Request, res: Response) => {
+  try {
+    res.status(200).json({ status: true, data: "lovers" });
+  } catch (error) {
+    res.status(500).json({ status: false, message: "Internal server error" });
+  }
+});
 const port = process.env.PORT || 3002;
 
 app.listen(port, () => {
