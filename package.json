@@ -8,8 +8,8 @@
     "build": "tsc",
     "serve": "node dist/index.js",
     "nodemon": "nodemon",
-    "vercel-build": "prisma generate",
-    "postinstall": "prisma generate"
+    "vercel-build": "echo hello",
+    "postinstall": "npx prisma generate"
   },
   "author": "",
   "license": "ISC",
