@@ -30,6 +30,10 @@ routes.use(utilRoute);
 //     process.exit(1);
 //   });
 
+app.get("/lovers", async (req: Request, res: Response) => {
+  res.status(200).json({ status: true, data: "lovers" });
+});
+
 app.use("/", routes);
 
 const port = process.env.PORT || 3000;
