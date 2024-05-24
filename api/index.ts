@@ -1,5 +1,12 @@
-import app from "../src/index";
+const express = require("express");
+const app = express();
+const port = 3000;
 
-app.get("/sasa", (req, res) => res.send("Express on Vercel"));
+app.get("/", (req: any, res: any) => {
+  res.send("Hello World!");
+});
 
-export default app;
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
+});
+module.exports = app;
