@@ -15,7 +15,7 @@ app.use(json());
 
 app.use(cors());
 
-// routes.use(crudRoute);
+routes.use(crudRoute);
 routes.use(utilRoute);
 
 // const prisma = new PrismaClient();
@@ -31,7 +31,7 @@ routes.use(utilRoute);
 //   });
 
 app.get("/lovers", async (req: Request, res: Response) => {
-  res.status(200).json({ status: true, data: "lovers" });
+    res.status(200).json({ status: true, data: "lovers" });
 });
 
 app.use("/", routes);
