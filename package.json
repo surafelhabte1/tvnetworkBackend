@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    // "start": "ts-node src/index.ts",
     "start": "node api/index.ts",
     "build": "tsc",
     "serve": "node dist/index.js",
