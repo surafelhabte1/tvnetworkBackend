@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
-import { PrismaClient } from "@prisma/client";
-// import { PrismaClient } from '../../prisma/generated/client/'
+// import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from '../../prisma/generated/client/'
 
 import * as argon2 from "argon2";
 
