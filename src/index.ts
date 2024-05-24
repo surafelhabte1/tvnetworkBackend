@@ -26,7 +26,6 @@ main()
     await prisma.$disconnect();
   })
   .catch(async (e) => {
-    console.error(e);
     await prisma.$disconnect();
     process.exit(1);
   });
@@ -39,4 +38,4 @@ app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
