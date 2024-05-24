@@ -173,6 +173,7 @@ utilRoute.post("/signup", async (req: Request, res: Response) => {
   }
 });
 
+// login
 utilRoute.post("/login", async (req: Request, res: Response) => {
   try {
     const result: any = await prisma.user.findMany({
