@@ -193,6 +193,6 @@ utilRoute.post("/login", async (req: Request, res: Response) => {
       res.status(200).json({ status: false, message: "incorrect email." });
     }
   } catch (error) {
-    res.status(500).json({ status: false, message: "Internal server error" });
+    res.status(500).json({ status: false, message: error });
   }
 });
