@@ -13,7 +13,6 @@ dotenv.config();
 const app = express();
 app.use(json());
 
-// Use CORS middleware
 app.use(cors());
 
 routes.use(crudRoute);
@@ -34,14 +33,9 @@ main()
 
 app.use("/", routes);
 
-app.get("/lala", async (req: Request, res: Response) => {
-  try {
-    res.status(200).json({ status: true, data: "lovers" });
-  } catch (error) {
-    res.status(500).json({ status: false, message: "Internal server error" });
-  }
-});
-const port = process.env.PORT || 3000;
+app.get("/kaka", (req, res) => res.send("Express on Vercel"));
+
+const port = process.env.PORT || 3002;
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
