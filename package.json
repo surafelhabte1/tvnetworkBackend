@@ -2,9 +2,9 @@
   "name": "tvnetworkbackend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.ts",
+    "start": "ts-node src/index.ts",
     "build": "tsc",
     "serve": "node dist/index.js",
     "nodemon": "nodemon",
