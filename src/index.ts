@@ -11,15 +11,11 @@ export const routes = express.Router();
 dotenv.config();
 
 const app = express();
-app.use(json());
+// Enable CORS for all routes
+app.use(cors());
 
-app.use(
-  cors({
-    origin: "https://tvnetwork-frontend-cw1wfxw01-surafels-projects.vercel.app",
-    methods: ["GET", "POST","DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+// Handle preflight requests
+app.options("*", cors());
 
 routes.use(crudRoute);
 routes.use(utilRoute);
