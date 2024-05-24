@@ -11,13 +11,11 @@ export const routes = express.Router();
 dotenv.config();
 
 const app = express();
-// Enable CORS for all routes
+app.use(json());
+
 app.use(cors());
 
-// Handle preflight requests
-app.options("*", cors());
-
-routes.use(crudRoute);
+// routes.use(crudRoute);
 routes.use(utilRoute);
 
 // const prisma = new PrismaClient();
