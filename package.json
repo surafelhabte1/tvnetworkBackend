@@ -4,12 +4,13 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "tsc",
+    "start": "node dist/index.js",
+    "build": "tsc && prisma generate",
     "serve": "node dist/index.js",
     "nodemon": "nodemon",
     "vercel-build": "echo hello",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
   },
   "author": "",
   "license": "ISC",
