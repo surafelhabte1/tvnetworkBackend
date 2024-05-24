@@ -1,13 +1,4 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "builds": {
-    "env": {
-      "DATABASE_URL": "postgres://default:3pVjo0zRgGPQ@ep-quiet-tree-a4fw0lfa.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
-    },
-    "commands": [
-      "npm install",
-      "prisma generate"
-    ]
-  }
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }]
 }
