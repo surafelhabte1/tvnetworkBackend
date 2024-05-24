@@ -2,15 +2,14 @@
   "name": "tvnetworkbackend",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
-    "build": "tsc && prisma generate",
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
     "serve": "node dist/index.js",
     "nodemon": "nodemon",
     "vercel-build": "echo hello",
-    "postinstall": "npx prisma generate",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    "postinstall": "npx prisma generate"
   },
   "author": "",
   "license": "ISC",
